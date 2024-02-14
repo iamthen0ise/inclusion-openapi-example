@@ -1,0 +1,9 @@
+type: object
+properties:
+  lp_public:
+    description: Public key
+    type: string
+  token:
+    description: Bearer Token
+    type: string
+    example: abc...xyz

@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Auth
+  summary: Auth handler
+  description: Receive JWT token by passing username and password
+  operationId: authPost
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/JWT.yaml
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/AuthInput.yaml
+    description: Auth payload
+    required: true
