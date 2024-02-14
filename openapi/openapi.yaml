@@ -101,6 +101,6 @@ components:
 
   securitySchemes:
     JWT:
-      type: jwt
+      type: apiKey
       in: header
       name: Authorization
