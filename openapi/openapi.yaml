@@ -2,6 +2,8 @@ openapi: 3.0.0
 info:
   title: Books API
   version: 1.0.0
+servers:
+  - url: https://example.com
 tags:
   - name: Books
     description: Operations related to books
