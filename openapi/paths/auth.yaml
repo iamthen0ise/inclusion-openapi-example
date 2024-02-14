@@ -11,7 +11,17 @@ post:
         application/json:
           schema:
             $ref: ../components/schemas/JWT.yaml
-
+        '400':
+          description: Bad Request - Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating invalid input
+                    example: Invalid input data
   requestBody:
     content:
       application/json:
@@ -19,3 +29,4 @@ post:
           $ref: ../components/schemas/AuthInput.yaml
     description: Auth payload
     required: true
+  security: []

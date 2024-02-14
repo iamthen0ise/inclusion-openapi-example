@@ -5,6 +5,9 @@ info:
 tags:
   - name: Books
     description: Operations related to books
+security:
+    - JWT:
+      - write
 paths:
   /auth:
     $ref: 'paths/auth.yaml'
@@ -21,6 +24,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BookList'
+        '400':
+          description: Bad Request - Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating invalid input
+                    example: Invalid input data
     post:
       summary: Add a new book
       operationId: addBook
@@ -101,6 +115,5 @@ components:
 
   securitySchemes:
     JWT:
-      type: apiKey
-      in: header
-      name: Authorization
+      type: http
+      scheme: bearer
